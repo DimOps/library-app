@@ -22,3 +22,7 @@ class StudySpace(models.Model):
     smartBoard = models.BooleanField(
         default=False,
     )
+
+    is_booked = models.BooleanField(
+        default=False,
+    )

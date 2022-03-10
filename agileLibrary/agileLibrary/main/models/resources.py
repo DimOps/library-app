@@ -31,17 +31,29 @@ class Book(models.Model):
         null=True,
     )
 
+    quantity = models.IntegerField(
+        default=1,
+    )
+
+    is_taken = models.BooleanField(
+        default=False,
+    )
+
+    is_reserved = models.BooleanField(
+        default=False,
+    )
+
 
 class Paper(models.Model):
     TITLE_MAX_LENGTH = 300
-    AUTHORS_MAX_LENGTH = 300
+    AUTHORS_NAMES_MAX_LENGTH = 300
 
     title = models.CharField(
         max_length=TITLE_MAX_LENGTH,
     )
 
     authors = models.CharField(
-        max_length=300,
+        max_length=AUTHORS_NAMES_MAX_LENGTH,
     )
 
     doi = models.URLField(
@@ -54,6 +66,14 @@ class Paper(models.Model):
     description = models.TextField(
         blank=True,
         null=True,
+    )
+
+    is_taken = models.BooleanField(
+        default=False,
+    )
+
+    is_reserved = models.BooleanField(
+        default=False,
     )
 
 
